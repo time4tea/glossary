@@ -35,6 +35,20 @@ describe("a simple glossary", function () {
   });
 });
 
+describe("glossary with multiple words", function() {
+  var g = new Glossary();
+  g.add("item1", []);
+  g.add("item2", []);
+
+  it("will find words", function () {
+    assert.equal(1, numberOfFoundItemsIn(g.gloss("this is a string with item1")));
+    assert.equal(1, numberOfFoundItemsIn(g.gloss("this is a string with item2")));
+    assert.equal(2, numberOfFoundItemsIn(g.gloss("this is a string with item1 and item2")));
+    assert.equal(0, numberOfFoundItemsIn(g.gloss("item item item")));
+    assert.equal(4, numberOfFoundItemsIn(g.gloss("item1 item2 item1 item2 something else")));
+  });
+});
+
 describe("tree traversal", function () {
   var g = new Glossary();
   g.add("bob", ["user", "stuff"]);
