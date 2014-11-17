@@ -1,0 +1,10 @@
+{
+  "name": "glossary",
+  "version": "0.0.1",
+  "dependencies": {
+    "binary-search-tree": "0.2.4"
+  },
+  "devDependencies": {
+    "mocha": "2.0.1"
+  }
+}
