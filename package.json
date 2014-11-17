@@ -2,7 +2,8 @@
   "name": "glossary",
   "version": "0.0.1",
   "dependencies": {
-    "binary-search-tree": "0.2.4"
+    "binary-search-tree": "0.2.4",
+    "lodash" : "2.4.1"
   },
   "devDependencies": {
     "mocha": "2.0.1"
