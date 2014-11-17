@@ -39,7 +39,7 @@ describe("tree traversal", function () {
   var g = new Glossary();
   g.add("bob", ["user", "stuff"]);
 
-  it("traverses the result tree in order", function() {
+  it("traverses the result tree in order", function () {
     var result = g.gloss("bob bob bob bob, bobitty bob bobitty, bob bob bob bob");
     var str = "";
     result.visit({
@@ -52,5 +52,14 @@ describe("tree traversal", function () {
     });
 
     assert.equal("x x x x, bobitty x bobitty, x x x x", str);
-  })
+  });
+
+
+  it("calls us back with user data", function () {
+    g.gloss("bob").visit({
+      gloss: function (text, ud) {
+        assert.equal("stuff", ud[1]);
+      }
+    });
+  });
 });
