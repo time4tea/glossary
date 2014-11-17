@@ -16,11 +16,16 @@ function numberOfFoundItemsIn(result) {
   return count;
 }
 
-describe("a glossary", function () {
-  it("will find words", function () {
-    var g = new Glossary();
-    g.add("item", ["user", "stuff"]);
+describe("a simple glossary", function () {
+  var g = new Glossary();
+  g.add("item", ["user", "stuff"]);
 
-    assert.equal(1, numberOfFoundItemsIn(g.gloss("this is a string with item bob")));
+  it("will find words", function () {
+    assert.equal(1, numberOfFoundItemsIn(g.gloss("this is a string with item bob")), "should find 1 item");
+    assert.equal(3, numberOfFoundItemsIn(g.gloss("item item item")), "should find 3 items");
+  });
+
+  it("only finds whole words", function () {
+    assert.equal(3, numberOfFoundItemsIn(g.gloss("item item item itemitem")));
   });
 });
