@@ -65,11 +65,13 @@ describe("glossary with phrases", function () {
 describe("phrases with punctuation", function () {
   var g = new Glossary();
   g.add("j.r. hartley", []);
+  g.add("u(ziq)", []);
 
   it("will find words", function () {
     assert.equal(numberOfFoundItemsIn(g.gloss("my name you see, is j.r. hartley")), 1);
     // . in a regex is a wildcard
     assert.equal(numberOfFoundItemsIn(g.gloss("my name you see, is jxrx hartley")), 0);
+    assert.equal(numberOfFoundItemsIn(g.gloss(" u(ziq) tango n.vectif")), 1);
   });
 });
 
