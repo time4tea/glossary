@@ -1,11 +1,22 @@
 {
   "name": "glossary",
   "version": "0.0.1",
+  "author": "James Richardson <james+glossary@time4tea.net>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/time4tea/glossary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/time4tea/glossary/issues"
+  },
   "dependencies": {
     "binary-search-tree": "0.2.4",
     "lodash" : "2.4.1"
   },
   "devDependencies": {
     "mocha": "2.0.1"
+  },
+  "scripts": {
+    "test": "mocha test/*"
   }
 }
