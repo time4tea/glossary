@@ -1,0 +1,5 @@
+.idea/workspace.xml
+example/sample.txt
+example/*.tbx
+node_modules/
+
