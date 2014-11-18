@@ -45,4 +45,18 @@ Is it a [computer] or a [person] at the other end. Phoning the [electricity comp
 ```
 
 
+## So what, that's a tiny file! - not very exciting
+
+The implementation, based on the Aho-Corasick text searching algorthim, should support reasonably large glossaries,
+and run in a short amount of time for large texts.
+
+See examples/microsoft.js for a more realistic example (on my laptop):
+
+```
+Loading 2451 definitions 
+Text length 268,647
+Parse in 320 ms
+Found entries 1797, Text nodes 1709
+```
+
 
