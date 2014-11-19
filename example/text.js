@@ -9,7 +9,7 @@ glossary.add("person");
 glossary.add("electricity company");
 
 var text = "Is it a computer or a person at the other end. Phoning the electricity company you would never know";
-var result = glossary.gloss(text);
+var result = glossary.prepare().gloss(text);
 
 var glossarised = "";
 result.accept({
