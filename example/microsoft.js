@@ -47,7 +47,7 @@ result.accept({
 
 console.log("Found entries " + g_count + ", Text nodes " + t_count);
 
-//result.visit({
+//result.accept({
 //  gloss: function(text) { console.log('[' + text + ']') },
 //  text: function(text) { console.log(text) }
 //});
