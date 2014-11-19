@@ -19,6 +19,8 @@ function numberOfFoundItemsIn(result) {
 describe("a simple glossary", function () {
   var g = new Glossary();
   g.add("item");
+  g.add("me");
+  g.add("time");
 
   it("will find words", function () {
     assert.equal(numberOfFoundItemsIn(g.gloss("this is a string with item bob")), 1);
@@ -27,6 +29,7 @@ describe("a simple glossary", function () {
 
   it("only finds whole words", function () {
     assert.equal(numberOfFoundItemsIn(g.gloss("item item item itemitem")), 3);
+    assert.equal(numberOfFoundItemsIn(g.gloss("i met me imey timey wimey ")), 1);
   });
 
   it("finds words with punctuation around", function () {
