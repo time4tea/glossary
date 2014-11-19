@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/time4tea/glossary.svg?branch=master)](https://travis-ci.org/time4tea/glossary)
+
 # Find items in a glossary in some text
 
 Example
