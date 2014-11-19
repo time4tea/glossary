@@ -26,7 +26,7 @@ var text = "Is it a computer or a person at the other end. Phoning the electrici
 var result = glossary.gloss(text);
 
 var glossarised = [];
-result.visit({
+result.accept({
   gloss: function (text) {
     glossarised += "[" + text + "]"
   },
@@ -41,7 +41,7 @@ console.log(glossarised);
 Gives the output
 
 ```
-Is it a [computer] or a [person] at the other end. Phoning the [electricity company]  you would never know
+Is it a [computer] or a [person] at the other end. Phoning the [electricity company] you would never know
 ```
 
 

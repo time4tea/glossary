@@ -40,7 +40,7 @@ var after = new Date().getTime();
 console.log("Parse in " + ( after - before ) + " ms");
 
 var g_count = 0, t_count = 0;
-result.visit({
+result.accept({
   gloss: function() { g_count++ },
   text: function() { t_count++; }
 });

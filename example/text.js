@@ -11,8 +11,8 @@ glossary.add("electricity company", {});
 var text = "Is it a computer or a person at the other end. Phoning the electricity company you would never know";
 var result = glossary.gloss(text);
 
-var glossarised = [];
-result.visit({
+var glossarised = "";
+result.accept({
   gloss: function (text) {
     glossarised += "[" + text + "]"
   },

@@ -5,7 +5,7 @@ var Glossary = require("../index").Glossary;
 function numberOfFoundItemsIn(result) {
   var count = 0;
 
-  result.visit({
+  result.accept({
     gloss: function (text) {
       count++;
     },
@@ -93,7 +93,7 @@ describe("tree traversal", function () {
   it("traverses the result tree in order", function () {
     var result = g.gloss("bob bob bob bob, bobitty bob bobitty, bob bob bob bob");
     var str = "";
-    result.visit({
+    result.accept({
       gloss: function (text) {
         str += "x";
       },
@@ -108,7 +108,7 @@ describe("tree traversal", function () {
 
   it("adds text item after the last match", function() {
     var str = ""
-    g.gloss("bob this is some text").visit({
+    g.gloss("bob this is some text").accept({
       gloss: function(text) { str += '[' + text + ']' },
       text: function(text) { str += text }
     });
@@ -122,7 +122,7 @@ describe("some user data", function() {
   g.add("bob", ["user", "stuff"]);
 
   it("calls us back with user data", function () {
-    g.gloss("bob").visit({
+    g.gloss("bob").accept({
       gloss: function (text, ud) {
         assert.equal(ud[1], "stuff");
       }
@@ -130,7 +130,7 @@ describe("some user data", function() {
   });
 
   it("doesn't mind if there is no user data", function () {
-    g.gloss("bob").visit({
+    g.gloss("bob").accept({
       gloss: function (text, ud) {
         assert.equal(ud[1], "stuff");
       }
@@ -143,7 +143,7 @@ describe("no user data", function() {
   g.add("bob");
 
   it("doesn't mind if there is no user data", function () {
-    g.gloss("bob").visit({
+    g.gloss("bob").accept({
       gloss: function (text, ud) {
         assert.equal("bob", text);
       }
