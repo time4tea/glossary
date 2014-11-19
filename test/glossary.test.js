@@ -58,8 +58,8 @@ describe("glossary with phrases", function () {
   g.add("item2");
 
   it("will find words with phrases", function () {
-//    assert.equal(numberOfFoundItemsIn(g.gloss("this is a string with something nice")), 1);
-//    assert.equal(numberOfFoundItemsIn(g.gloss("this is a string with item2")), 1);
+    assert.equal(numberOfFoundItemsIn(g.gloss("this is a string with something nice")), 1);
+    assert.equal(numberOfFoundItemsIn(g.gloss("this is a string with item2")), 1);
     assert.equal(numberOfFoundItemsIn(g.gloss("something item nice")), 0);
     assert.equal(numberOfFoundItemsIn(g.gloss("something  nice")), 0);
   });
